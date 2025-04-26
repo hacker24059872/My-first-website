@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bravin's Digital Universe</title>
+    <style>
+        /* Futuristic Background */
+        body {
+            background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 80px 20px;
+            overflow: hidden;
+            position: relative;
+            transition: background 0.5s ease;
+        }
+
+        /* Animated Grid Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent),
+                        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 1px, transparent 50px),
+                        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 50px);
+            animation: gridMove 10s infinite linear;
+            z-index: -1;
+        }
+
+        /* Title */
+        h1 {
+            color: #00bfff;
+            font-size: 3em;
+            text-transform: uppercase;
+            padding-bottom: 20px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Button Styling */
+        .button-container {
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            background: #00bfff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 10px;
+            transition: 0.3s;
+            box-shadow: 0 0 15px #00bfff;
+            animation: pulseGlow 1.5s infinite alternate;
+        }
+        button:hover {
+            background: #ff4747;
+            box-shadow: 0 0 20px #ff4747;
+        }
+
+        /* Story & Support Sections */
+        .content-box {
+            display: none;
+            margin-top: 20px;
+            font-style: italic;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: left;
+            animation: fadeInBox 0.8s ease-in-out forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeInBox {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulseGlow {
+            from { box-shadow: 0 0 15px #00bfff; }
+            to { box-shadow: 0 0 25px #00bfff; }
+        }
+
+        @keyframes gridMove {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-50px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Bravin's World</h1>
+
+    <div class="button-container">
+        <button onclick="document.getElementById('story').style.display='block'">Click Here</button>
+        <button onclick="document.getElementById('story').style.display='none'">Hide</button>
+        <div id="story" class="content-box">
+            <p>Bravin was not like other kids. While they were outside playing football, he was inside, dismantling old computers to see how they worked...</p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button onclick="document.getElementById('support').style.display='block'">Support Developer</button>
+        <button onclick="document.getElementById('support').style.display='none'">Hide</button>
+        <div id="support" class="content-box">
+            <p>Instagram: <a href="https://www.instagram.com/Bravin_me.exe" target="_blank">@Bravin_me.exe</a></p>
+            <p>YouTube: <a href="https://www.youtube.com/@GRANDCYBERMANIAC" target="_blank">GRANDCYBERMANIAC</a></p>
+        </div>
+    </div>
+</body>
+</html>
